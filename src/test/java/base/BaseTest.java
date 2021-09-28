@@ -9,6 +9,7 @@ public class BaseTest extends Driver {
     @Before
     public void beforeTest(){
         getDriver();
+        pagefactory(driver);
     }
 
     @After

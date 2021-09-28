@@ -27,6 +27,15 @@ public class ConfigReader {
 
          static String browser=getProperty("browser");
          static String url=getProperty("baseurl");
-         public static String city=getProperty("city");
+         public static String firstCity=getProperty("firstCity");
+         public static String secondCity=getProperty("secondCity");
+         public static String telefonNo=getProperty("telefonNo");
+         public static String email=getProperty("email");
+         public static String Ad=getProperty("Ad");
+         public static String Soyad=getProperty("Soyad");
+         public static String TC=getProperty("TC");
+         public static String HESCODE=getProperty("HESCODE");
+
+
 
 }

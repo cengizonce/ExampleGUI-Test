@@ -6,10 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.PageFactory;
+import page.HomePageObj;
+import page.InfoPageObj;
+import page.TicketPageObj;
 
 public class Driver {
 
 public static WebDriver driver;
+
 
     public static void getDriver() {
         if (driver == null) {
@@ -43,6 +48,17 @@ public static WebDriver driver;
             driver = null;
         }
     }
+
+    public void pagefactory(WebDriver driver) {
+        PageFactory.initElements(driver, HomePageObj.class);
+        PageFactory.initElements(driver, InfoPageObj.class);
+        PageFactory.initElements(driver, TicketPageObj.class);
+
+        System.out.println("İNİTTTTS FONKSİYONUNDA OLUŞTURULDU");
+    }
+
+
+
 
 
 }
