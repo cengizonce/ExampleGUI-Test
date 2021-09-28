@@ -26,10 +26,9 @@ public class MethodDef extends Driver {
     }
 
     public String getTextElement(WebElement element) {
-        String elemaninTexti = "";
-        elemaninTexti = element.getText();
-        System.out.println("Elemanın Text değeri: " + elemaninTexti);
-        return elemaninTexti;
+        String elementText = "";
+        elementText = element.getText();
+        return elementText;
     }
 
     public void waitForVisibility(WebElement element, long timeToWaitInSec) {
@@ -47,37 +46,34 @@ public class MethodDef extends Driver {
         actions.moveToElement(element).perform();
     }
 
-  public String getAttributeSelectValue(WebElement element,String key){
+    public String getAttributeSelectValue(WebElement element, String key) {
         String atttributetext = element.getAttribute(key);
         return atttributetext;
-  }
+    }
 
-    public String getText(WebElement element){
-        String elementText = element.getText();
-        return elementText;
+    public String getText(WebElement element) {
+        String elementtText = element.getText();
+        return elementtText;
     }
 
 
-
-    public String findMinValueInList(List<WebElement> elements){
-    int min= Integer.MAX_VALUE;
+    public String findMinValueInList(List<WebElement> elements) {
+        int min = Integer.MAX_VALUE;
 
         for (WebElement element : elements) {
-            String elementa = element.getText();
-            int elementsayi = Integer.parseInt(elementa);
+            String elementGetText = element.getText();
+            int elementInt = Integer.parseInt(elementGetText);
 
-            if (elementsayi<min)
-            min=elementsayi;
+            if (elementInt < min)
+                min = elementInt;
         }
-        String minstring =String.valueOf(min);
-        return minstring;
+        String minString = String.valueOf(min);
+        return minString;
     }
 
     public void wait(int timeout) throws InterruptedException {
-        int second=timeout*1000;
+        int second = timeout * 1000;
         Thread.sleep(second);
     }
-
-
 
 }

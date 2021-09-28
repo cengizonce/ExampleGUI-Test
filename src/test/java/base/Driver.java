@@ -13,22 +13,19 @@ import page.TicketPageObj;
 
 public class Driver {
 
-public static WebDriver driver;
+    public static WebDriver driver;
 
 
     public static void getDriver() {
         if (driver == null) {
-            System.out.println("Driver seçimine gelindi");
             switch (ConfigReader.browser) {
                 case "chrome":
-                    System.out.println("Chrome driver seçildi");
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--disable-notifications");
                     driver = new ChromeDriver(chromeOptions);
                     break;
                 case "firefox":
-                    System.out.println("Firefox driver seçildi");
                     WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.addArguments("--disable-notifications");
@@ -36,14 +33,12 @@ public static WebDriver driver;
 
             }
         }
-        System.out.println("Driver büyütüldü");
         driver.manage().window().maximize();
         driver.get(ConfigReader.url);
     }
 
     public static void closeDriver() {
         if (driver != null) {
-            System.out.println("Driver kapatıldı");
             driver.quit();
             driver = null;
         }
@@ -53,12 +48,7 @@ public static WebDriver driver;
         PageFactory.initElements(driver, HomePageObj.class);
         PageFactory.initElements(driver, InfoPageObj.class);
         PageFactory.initElements(driver, TicketPageObj.class);
-
-        System.out.println("İNİTTTTS FONKSİYONUNDA OLUŞTURULDU");
     }
-
-
-
 
 
 }

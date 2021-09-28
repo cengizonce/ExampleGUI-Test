@@ -7,14 +7,14 @@ public class BaseTest extends Driver {
 
 
     @Before
-    public void beforeTest(){
+    public void beforeTest() {
         getDriver();
         pagefactory(driver);
     }
 
     @After
-    public void afterTest(){
-    closeDriver();
+    public void afterTest() {
+        closeDriver();
     }
 
 }
